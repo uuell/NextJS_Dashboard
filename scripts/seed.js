@@ -1,10 +1,13 @@
+// SDK module using db to create a client because I'm making multiple queries
 const { db } = require('@vercel/postgres');
+// data modules
 const {
   invoices,
   customers,
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
+// hashing module
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
@@ -161,6 +164,8 @@ async function seedRevenue(client) {
 }
 
 async function main() {
+  // creating a client and connecting to the database
+  // you don't need to specify the url, host, pass, etc. because we are running this as script and using the -r(register) syntax of npm
   const client = await db.connect();
 
   await seedUsers(client);
