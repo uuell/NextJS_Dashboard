@@ -1,5 +1,8 @@
 import clsx from 'clsx';
 
+// ButtonProps is an interface defining the properties expected by the Button component.
+// It extends the standard HTML button attributes provided by React.
+// It includes a children property for passing content to the button.
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }

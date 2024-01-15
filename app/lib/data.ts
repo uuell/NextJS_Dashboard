@@ -20,8 +20,8 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    // console.log('Fetching revenue data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
@@ -174,6 +174,8 @@ export async function fetchInvoiceById(id: string) {
       FROM invoices
       WHERE invoices.id = ${id};
     `;
+    // console.log(data);
+    
 
     const invoice = data.rows.map((invoice) => ({
       ...invoice,
@@ -197,6 +199,9 @@ export async function fetchCustomers() {
       FROM customers
       ORDER BY name ASC
     `;
+
+    // an array of objects
+    // console.log(data);    
 
     const customers = data.rows;
     return customers;

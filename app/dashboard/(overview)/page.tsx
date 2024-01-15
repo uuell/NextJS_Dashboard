@@ -12,6 +12,9 @@ import {
 } from '@/app/ui/skeletons';
 
 // import { fetchRevenue, fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
+
+// export const dynamic = 'force-dynamic'
+
 export default async function Page() {
   // Example of Waterfall in Chapter 7
   // A "waterfall" refers to a sequence of network requests that depend on the completion of previous requests.

@@ -6,12 +6,16 @@ import { lusitana } from '@/app/ui/fonts';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
- 
+
+
+// export const dynamic = 'force-dynamic'
+
 export default async function Page({
     // An object containing the search parameters of the current URL.
     // searchParams is a Dynamic API whose values cannot be known ahead of time. 
     // Using it will opt the page into dynamic rendering at request time.
     // searchParams returns a plain JavaScript object and not a URLSearchParams instance.
+    // searchParams Prop is used to access the params in Pages that are server components
     searchParams,
   }: {
     searchParams?: {
@@ -20,7 +24,7 @@ export default async function Page({
     };
   }) {
     // search params is an object that contains the query
-    console.log(searchParams);
+    // console.log(searchParams);
     
     const query = searchParams?.query || '';
     const currentPage = Number(searchParams?.page) || 1;
